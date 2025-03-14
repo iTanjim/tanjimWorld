@@ -1,0 +1,34 @@
+.nav {
+  color: white;
+  margin: 3rem 0 2rem 0;
+  border-radius: 5px;
+}
+
+.nav ul {
+  display: flex;
+  border-radius: 5px;
+  background-color: var(--color-dark--2);
+}
+.nav ul li {
+  position: relative;
+  list-style: none;
+  cursor: pointer;
+  z-index: 1;
+  transition: 0.3s ease;
+  background-color: none;
+}
+.nav a:link,
+.nav a:visited {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 0.7rem 2rem;
+  border-radius: 5px;
+}
+
+.nav a:global(.active) {
+  background-color: var(--color-dark--0);
+}
