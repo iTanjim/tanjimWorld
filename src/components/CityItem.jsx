@@ -11,7 +11,7 @@ const formateDate = (date) =>
 
 function CityItem({ city }) {
   const { cityName, emoji, date, id, position } = city;
-  const { currentCity } = useCities();
+  const { currentCity, setMapPosition } = useCities();
 
   return (
     <li>
@@ -20,6 +20,7 @@ function CityItem({ city }) {
           id === currentCity.id ? styles[`cityItem--active`] : ""
         }`}
         to={`${id}?lat=${position.lat}&lng=${position.lng}`}
+        onClick={() => setMapPosition([position.lat, position.lng])}
       >
         <span className={styles.emoji}>{emoji}</span>
         <h3 className={styles.name}>{cityName}</h3>

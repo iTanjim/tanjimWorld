@@ -7,42 +7,51 @@ function CitiesProvider({children}){
     const [cities, setCities] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [currentCity, setCurrentCity] = useState({});
-   
+    const [mapPosition, setMapPosition] = useState([10, 10]);
+
     useEffect(() => {
-        const fetchCities = async () => {
-            try {
-            setIsLoading(true);
-            const response = await fetch(`${BASE_URL}/cities`);
-            const data = await response.json();
-            setCities(data);
-            } catch (err) {
-            console.log(err);
-            } finally {
-            setIsLoading(false);
-            }
+      const fetchCities = async () => {
+        try {
+          setIsLoading(true);
+          const response = await fetch(`${BASE_URL}/cities`);
+          const data = await response.json();
+          setCities(data);
+        } catch (err) {
+          console.log(err);
+        } finally {
+          setIsLoading(false);
         }
-        fetchCities();
+      };
+      fetchCities();
     }, []);
 
-    async function getCity(id){
-            try {
-                setIsLoading(true);
-                const response = await fetch(`${BASE_URL}/cities/${id}`);
-                const data = await response.json();
-                setCurrentCity(data);
-            } catch (err) {
-                console.log(err);
-            } finally {
-                setIsLoading(false);
-            }
+    async function getCity(id) {
+      try {
+        setIsLoading(true);
+        const response = await fetch(`${BASE_URL}/cities/${id}`);
+        const data = await response.json();
+        setCurrentCity(data);
+      } catch (err) {
+        console.log(err);
+      } finally {
+        setIsLoading(false);
+      }
     }
 
-    return <CitiesContext.Provider value={{
-        cities,
-        isLoading,
-        currentCity,
-        getCity,
-    }}>{children}</CitiesContext.Provider>
+    return (
+      <CitiesContext.Provider
+        value={{
+          cities,
+          isLoading,
+          currentCity,
+          mapPosition,
+          setMapPosition,
+          getCity,
+        }}
+      >
+        {children}
+      </CitiesContext.Provider>
+    );
 
 }
 
