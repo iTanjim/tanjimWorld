@@ -35,6 +35,78 @@
         "lng": 13.376933665713324
       },
       "id": 98443197
+    },
+    {
+      "cityName": "Tokyo",
+      "country": "Japan",
+      "emoji": "🎌",
+      "date": "2028-03-21T11:45:30.000Z",
+      "notes": "Fantastic food and culture!",
+      "position": {
+        "lat": 35.682839,
+        "lng": 139.759455
+      },
+      "id": 12345678
+    },
+    {
+      "cityName": "Cape Town",
+      "country": "South Africa",
+      "emoji": "🌄",
+      "date": "2028-06-10T16:30:25.000Z",
+      "notes": "Stunning views of Table Mountain.",
+      "position": {
+        "lat": -33.924869,
+        "lng": 18.424055
+      },
+      "id": 87654321
+    },
+    {
+      "cityName": "Sydney",
+      "country": "Australia",
+      "emoji": "🦘",
+      "date": "2028-09-14T10:15:00.000Z",
+      "notes": "Loved the Opera House!",
+      "position": {
+        "lat": -33.86882,
+        "lng": 151.209296
+      },
+      "id": 56781234
+    },
+    {
+      "cityName": "Rio de Janeiro",
+      "country": "Brazil",
+      "emoji": "🎉",
+      "date": "2028-12-20T14:00:00.000Z",
+      "notes": "Carnival was incredible!",
+      "position": {
+        "lat": -22.906847,
+        "lng": -43.172896
+      },
+      "id": 43218765
+    },
+    {
+      "cityName": "Vancouver",
+      "country": "Canada",
+      "emoji": "🍁",
+      "date": "2029-02-28T09:00:00.000Z",
+      "notes": "Beautiful nature and scenery.",
+      "position": {
+        "lat": 49.282729,
+        "lng": -123.120738
+      },
+      "id": 34567812
+    },
+    {
+      "cityName": "Rome",
+      "country": "Italy",
+      "emoji": "🏛️",
+      "date": "2029-05-05T12:30:00.000Z",
+      "notes": "Historical sites everywhere!",
+      "position": {
+        "lat": 41.902783,
+        "lng": 12.496366
+      },
+      "id": 65432187
     }
   ]
 }

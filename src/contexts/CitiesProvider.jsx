@@ -7,8 +7,6 @@ function CitiesProvider({children}){
     const [cities, setCities] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [currentCity, setCurrentCity] = useState({});
-    const [mapPosition, setMapPosition] = useState([10, 10]);
-
     useEffect(() => {
       const fetchCities = async () => {
         try {
@@ -44,8 +42,6 @@ function CitiesProvider({children}){
           cities,
           isLoading,
           currentCity,
-          mapPosition,
-          setMapPosition,
           getCity,
         }}
       >
