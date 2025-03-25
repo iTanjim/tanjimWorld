@@ -3,7 +3,7 @@
     {
       "cityName": "Lisbon",
       "country": "Portugal",
-      "emoji": "😡",
+      "emoji": "PT",
       "date": "2027-10-31T15:59:59.138Z",
       "notes": "My favorite city so far!",
       "position": {
@@ -15,7 +15,7 @@
     {
       "cityName": "Madrid",
       "country": "Spain",
-      "emoji": "🐏",
+      "emoji": "ES",
       "date": "2027-07-15T08:22:53.976Z",
       "notes": "I went to see Christiano Ronaldo but he wasnt home 👎😒",
       "position": {
@@ -27,7 +27,7 @@
     {
       "cityName": "Berlin",
       "country": "Germany",
-      "emoji": "🦅",
+      "emoji": "DE",
       "date": "2027-02-12T09:24:11.863Z",
       "notes": "Amazing 😃",
       "position": {
@@ -39,7 +39,7 @@
     {
       "cityName": "Tokyo",
       "country": "Japan",
-      "emoji": "🎌",
+      "emoji": "JP",
       "date": "2028-03-21T11:45:30.000Z",
       "notes": "Fantastic food and culture!",
       "position": {
@@ -51,7 +51,7 @@
     {
       "cityName": "Cape Town",
       "country": "South Africa",
-      "emoji": "🌄",
+      "emoji": "ZA",
       "date": "2028-06-10T16:30:25.000Z",
       "notes": "Stunning views of Table Mountain.",
       "position": {
@@ -63,7 +63,7 @@
     {
       "cityName": "Sydney",
       "country": "Australia",
-      "emoji": "🦘",
+      "emoji": "AU",
       "date": "2028-09-14T10:15:00.000Z",
       "notes": "Loved the Opera House!",
       "position": {
@@ -75,7 +75,7 @@
     {
       "cityName": "Rio de Janeiro",
       "country": "Brazil",
-      "emoji": "🎉",
+      "emoji": "BR",
       "date": "2028-12-20T14:00:00.000Z",
       "notes": "Carnival was incredible!",
       "position": {
@@ -87,7 +87,7 @@
     {
       "cityName": "Vancouver",
       "country": "Canada",
-      "emoji": "🍁",
+      "emoji": "CA",
       "date": "2029-02-28T09:00:00.000Z",
       "notes": "Beautiful nature and scenery.",
       "position": {
@@ -99,7 +99,7 @@
     {
       "cityName": "Rome",
       "country": "Italy",
-      "emoji": "🏛️",
+      "emoji": "IT",
       "date": "2029-05-05T12:30:00.000Z",
       "notes": "Historical sites everywhere!",
       "position": {

@@ -5,6 +5,7 @@ import Button from "./Button";
 import styles from "./Form.module.css";
 import { useNavigate } from "react-router-dom";
 import { useUrlPosition } from "../hooks/useUrlPosition";
+import ReactCountryFlag from "react-country-flag";
 
 export function convertToEmoji(countryCode) {
   const codePoints = countryCode
@@ -29,19 +30,34 @@ function Form() {
       day: "numeric",
       year: "2-digit",
     }).format(new Date(date));
-
   const [isLoadingGeocoding, setIsLoadingGeocoding] = useState(false);
   const navigate = useNavigate();
+  const [emoji, setEmoji] = useState("");
+
+  //flagStyle
+  const flagStyle = {
+    width: "100%",
+    height: "100%",
+    position: "absolute",
+    objectFit: "cover",
+    left: 0,
+    top: 0,
+    opacity: 0.1,
+    zIndex: -1,
+    borderRadius: "7px",
+  };
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         setIsLoadingGeocoding(true);
         const result = await fetch(
-          `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lng}`
+          `${BASE_URL}?latitude=${lat}&longitude=${lng}`
         );
         const data = await result.json();
-        setCityName(data.city);
+        setCityName(data.city || data.locality || "Not Found");
+        setCountry(data.countryName);
+        setEmoji(data.countryCode);
       } catch (err) {
         throw new Error(err);
       } finally {
@@ -54,6 +70,7 @@ function Form() {
 
   return (
     <form className={styles.form}>
+      <ReactCountryFlag countryCode={emoji} svg style={flagStyle} />
       <div className={styles.row}>
         <label htmlFor="cityName">City name</label>
         <input
@@ -61,7 +78,10 @@ function Form() {
           onChange={(e) => setCityName(e.target.value)}
           value={cityName}
         />
-        {/* <span className={styles.flag}>{emoji}</span> */}
+
+        <span className={styles.flag}>
+          <ReactCountryFlag countryCode={emoji} svg />
+        </span>
       </div>
 
       <div className={styles.row}>

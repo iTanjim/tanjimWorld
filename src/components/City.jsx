@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useCities } from "../contexts/CitiesProvider";
 import Button from "./Button";
 import Spinner from "./Spinner";
+import ReactCountryFlag from "react-country-flag";
 
 const formatDate = (date) =>
   new Intl.DateTimeFormat("en", {
@@ -31,7 +32,15 @@ function City() {
       <div className={styles.row}>
         <h6>City name</h6>
         <h3>
-          <span>{emoji}</span> {cityName}
+          <ReactCountryFlag
+            countryCode={emoji}
+            svg
+            style={{
+              width: "5rem",
+              height: "5rem",
+            }}
+          />{" "}
+          {cityName}
         </h3>
       </div>
 

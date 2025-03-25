@@ -1,3 +1,4 @@
+import ReactCountryFlag from "react-country-flag";
 import { useCities } from "../contexts/CitiesProvider";
 import CountryItem from "./CountryItem";
 import styles from "./CountryList.module.css";
@@ -22,7 +23,18 @@ function CountryList() {
   return (
     <ul className={styles.countryList}>
       {countries.map((city) => {
-        return <CountryItem item={city} key={city.id} />;
+        return (
+          <CountryItem item={city} key={city.id}>
+            <ReactCountryFlag
+              countryCode={city.emoji}
+              svg
+              style={{
+                width: "5rem",
+                height: "5rem",
+              }}
+            />
+          </CountryItem>
+        );
       })}
     </ul>
   );

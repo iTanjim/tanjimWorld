@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "./CityItem.module.css";
 import { useCities } from "../contexts/CitiesProvider";
+import { Children } from "react";
 
 const formateDate = (date) =>
   new Intl.DateTimeFormat("en", {
@@ -9,7 +10,7 @@ const formateDate = (date) =>
     year: "numeric",
   }).format(new Date(date));
 
-function CityItem({ city }) {
+function CityItem({ city, children }) {
   const { cityName, emoji, date, id, position } = city;
   const { currentCity, setMapPosition } = useCities();
 
@@ -21,7 +22,8 @@ function CityItem({ city }) {
         }`}
         to={`${id}?lat=${position.lat}&lng=${position.lng}`}
       >
-        <span className={styles.emoji}>{emoji}</span>
+        {/* <span className={styles.emoji}>{emoji}</span> */}
+        {children}
         <h3 className={styles.name}>{cityName}</h3>
         <time className={styles.date}>{`(${formateDate(date)})`}</time>
         <button className={styles.deleteBtn}>&times;</button>
