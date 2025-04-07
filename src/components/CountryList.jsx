@@ -24,7 +24,7 @@ function CountryList() {
     <ul className={styles.countryList}>
       {countries.map((city) => {
         return (
-          <CountryItem item={city} key={city.id}>
+          <CountryItem item={city} key={city.country}>
             <ReactCountryFlag
               countryCode={city.emoji}
               svg

@@ -6,6 +6,8 @@ import styles from "./Form.module.css";
 import { useNavigate } from "react-router-dom";
 import { useUrlPosition } from "../hooks/useUrlPosition";
 import ReactCountryFlag from "react-country-flag";
+import Message from "./Message";
+import Spinner from "./Spinner";
 
 export function convertToEmoji(countryCode) {
   const codePoints = countryCode
@@ -30,7 +32,9 @@ function Form() {
       day: "numeric",
       year: "2-digit",
     }).format(new Date(date));
+
   const [isLoadingGeocoding, setIsLoadingGeocoding] = useState(false);
+  const [geocodingError, setGeocodingError] = useState("");
   const navigate = useNavigate();
   const [emoji, setEmoji] = useState("");
 
@@ -48,9 +52,11 @@ function Form() {
   };
 
   useEffect(() => {
+    if (!lng || !lat) return;
     const fetchData = async () => {
       try {
         setIsLoadingGeocoding(true);
+        setGeocodingError("");
         const result = await fetch(
           `${BASE_URL}?latitude=${lat}&longitude=${lng}`
         );
@@ -58,8 +64,12 @@ function Form() {
         setCityName(data.city || data.locality || "Not Found");
         setCountry(data.countryName);
         setEmoji(data.countryCode);
+        if (!data.countryCode)
+          throw new Error(
+            "That doesn't seem to be a city. Please click somewhere else 🥺"
+          );
       } catch (err) {
-        throw new Error(err);
+        setGeocodingError(err.message);
       } finally {
         setIsLoadingGeocoding(false);
       }
@@ -68,9 +78,17 @@ function Form() {
     fetchData();
   }, [lat, lng]);
 
+  if (isLoadingGeocoding) return <Spinner />;
+
+  if (!lat && !lng)
+    return <Message message={"Start by clicking somewhere on the map."} />;
+
+  if (geocodingError) return <Message message={geocodingError} />;
+
   return (
-    <form className={styles.form}>
-      <ReactCountryFlag countryCode={emoji} svg style={flagStyle} />
+    <form className={styles.form} onSubmit={handlesubmit}>
+      <ReactCountryFlag countryCode={emoji || null} svg style={flagStyle} />
+
       <div className={styles.row}>
         <label htmlFor="cityName">City name</label>
         <input
@@ -80,10 +98,9 @@ function Form() {
         />
 
         <span className={styles.flag}>
-          <ReactCountryFlag countryCode={emoji} svg />
+          <ReactCountryFlag countryCode={emoji || null} svg />
         </span>
       </div>
-
       <div className={styles.row}>
         <label htmlFor="date">When did you go to {cityName}?</label>
         <input
@@ -92,7 +109,6 @@ function Form() {
           value={formateDate(date)}
         />
       </div>
-
       <div className={styles.row}>
         <label htmlFor="notes">Notes about your trip to {cityName}</label>
         <textarea
@@ -101,7 +117,6 @@ function Form() {
           value={notes}
         />
       </div>
-
       <div className={styles.buttons}>
         <Button type="primary">Add</Button>
         <Button

@@ -29,7 +29,7 @@ function Map() {
     function () {
       if (mapLat && mapLng) {
         setMapPosition([parseFloat(mapLat), parseFloat(mapLng)]);
-      } else console.log("Hello");
+      }
     },
     [mapLat, mapLng]
   );
