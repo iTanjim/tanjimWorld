@@ -1,6 +1,6 @@
 // "https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=0&longitude=0"
 
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Button from "./Button";
 import styles from "./Form.module.css";
 import { useNavigate } from "react-router-dom";
@@ -8,6 +8,10 @@ import { useUrlPosition } from "../hooks/useUrlPosition";
 import ReactCountryFlag from "react-country-flag";
 import Message from "./Message";
 import Spinner from "./Spinner";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import BackButton from "./BackButton";
+import { useCities } from "../contexts/CitiesProvider";
 
 export function convertToEmoji(countryCode) {
   const codePoints = countryCode
@@ -25,13 +29,7 @@ function Form() {
   const [date, setDate] = useState(new Date());
   const [notes, setNotes] = useState("");
   const [lat, lng] = useUrlPosition();
-
-  const formateDate = (date) =>
-    new Intl.DateTimeFormat("en", {
-      month: "numeric",
-      day: "numeric",
-      year: "2-digit",
-    }).format(new Date(date));
+  const { createCity } = useCities();
 
   const [isLoadingGeocoding, setIsLoadingGeocoding] = useState(false);
   const [geocodingError, setGeocodingError] = useState("");
@@ -78,6 +76,27 @@ function Form() {
     fetchData();
   }, [lat, lng]);
 
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    if (!cityName || !date) return;
+
+    const newCity = {
+      cityName,
+      country,
+      emoji,
+      date,
+      notes,
+      position: { lat, lng },
+    };
+    resetForm();
+    createCity(newCity);
+  }
+
+  function resetForm() {
+    setNotes("");
+  }
+
   if (isLoadingGeocoding) return <Spinner />;
 
   if (!lat && !lng)
@@ -86,7 +105,7 @@ function Form() {
   if (geocodingError) return <Message message={geocodingError} />;
 
   return (
-    <form className={styles.form} onSubmit={handlesubmit}>
+    <form className={styles.form} onSubmit={handleSubmit}>
       <ReactCountryFlag countryCode={emoji || null} svg style={flagStyle} />
 
       <div className={styles.row}>
@@ -103,10 +122,11 @@ function Form() {
       </div>
       <div className={styles.row}>
         <label htmlFor="date">When did you go to {cityName}?</label>
-        <input
+
+        <DatePicker
           id="date"
-          onChange={(e) => setDate(e.target.value)}
-          value={formateDate(date)}
+          selected={date}
+          onChange={(date) => setDate(date)}
         />
       </div>
       <div className={styles.row}>
@@ -119,15 +139,7 @@ function Form() {
       </div>
       <div className={styles.buttons}>
         <Button type="primary">Add</Button>
-        <Button
-          type="back"
-          onClick={(e) => {
-            e.preventDefault();
-            navigate(-1);
-          }}
-        >
-          &larr; Back
-        </Button>
+        <BackButton />
       </div>
     </form>
   );

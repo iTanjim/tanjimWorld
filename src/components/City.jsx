@@ -2,9 +2,9 @@ import { useNavigate, useParams } from "react-router-dom";
 import styles from "./City.module.css";
 import { useEffect, useState } from "react";
 import { useCities } from "../contexts/CitiesProvider";
-import Button from "./Button";
 import Spinner from "./Spinner";
 import ReactCountryFlag from "react-country-flag";
+import BackButton from "./BackButton";
 
 const formatDate = (date) =>
   new Intl.DateTimeFormat("en", {
@@ -67,9 +67,7 @@ function City() {
         </a>
       </div>
 
-      <Button type="back" onClick={() => navigate(-1)}>
-        &larr;Back
-      </Button>
+      <BackButton />
     </div>
   );
 }

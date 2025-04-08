@@ -10,7 +10,7 @@
         "lat": 38.727881642324164,
         "lng": -9.140900099907554
       },
-      "id": 73930385
+      "id": "73930385"
     },
     {
       "cityName": "Madrid",
@@ -22,7 +22,7 @@
         "lat": 40.46635901755316,
         "lng": -3.7133789062500004
       },
-      "id": 17806751
+      "id": "17806751"
     },
     {
       "cityName": "Berlin",
@@ -34,7 +34,7 @@
         "lat": 52.53586782505711,
         "lng": 13.376933665713324
       },
-      "id": 98443197
+      "id": "98443197"
     },
     {
       "cityName": "Tokyo",
@@ -46,7 +46,7 @@
         "lat": 35.682839,
         "lng": 139.759455
       },
-      "id": 12345678
+      "id": "12345678"
     },
     {
       "cityName": "Cape Town",
@@ -58,7 +58,7 @@
         "lat": -33.924869,
         "lng": 18.424055
       },
-      "id": 87654321
+      "id": "87654321"
     },
     {
       "cityName": "Sydney",
@@ -70,7 +70,7 @@
         "lat": -33.86882,
         "lng": 151.209296
       },
-      "id": 56781234
+      "id": "56781234"
     },
     {
       "cityName": "Rio de Janeiro",
@@ -82,7 +82,7 @@
         "lat": -22.906847,
         "lng": -43.172896
       },
-      "id": 43218765
+      "id": "43218765"
     },
     {
       "cityName": "Vancouver",
@@ -94,7 +94,7 @@
         "lat": 49.282729,
         "lng": -123.120738
       },
-      "id": 34567812
+      "id": "34567812"
     },
     {
       "cityName": "Rome",
@@ -106,7 +106,79 @@
         "lat": 41.902783,
         "lng": 12.496366
       },
-      "id": 65432187
+      "id": "65432187"
+    },
+    {
+      "id": "794c",
+      "cityName": "Cabanes",
+      "country": "Spain",
+      "emoji": "ES",
+      "date": "2025-04-08T19:51:20.247Z",
+      "notes": "wdwda",
+      "position": {
+        "lat": "40.12429084831405",
+        "lng": "0.017852783203125003"
+      }
+    },
+    {
+      "id": "e59a",
+      "cityName": "Reguiba",
+      "country": "Algeria",
+      "emoji": "DZ",
+      "date": "2025-04-08T19:51:20.247Z",
+      "notes": "",
+      "position": {
+        "lat": "33.815666308702774",
+        "lng": "6.50390625"
+      }
+    },
+    {
+      "id": "ed0a",
+      "cityName": "Melenki",
+      "country": "Russian Federation (the)",
+      "emoji": "RU",
+      "date": "2025-04-08T19:55:05.296Z",
+      "notes": "zsA",
+      "position": {
+        "lat": "55.42901345240742",
+        "lng": "41.48437500000001"
+      }
+    },
+    {
+      "id": "3203",
+      "cityName": "Castelo de Vide",
+      "country": "Portugal",
+      "emoji": "PT",
+      "date": "2025-04-08T19:57:20.641Z",
+      "notes": "dddd",
+      "position": {
+        "lat": "39.470125122358176",
+        "lng": "-7.536621093750001"
+      }
+    },
+    {
+      "id": "f0d3",
+      "cityName": "Gus’-Khrustal’nyy",
+      "country": "Russian Federation (the)",
+      "emoji": "RU",
+      "date": "2025-04-08T20:10:51.613Z",
+      "notes": "",
+      "position": {
+        "lat": "55.60860840190929",
+        "lng": "41.13555908203126"
+      }
+    },
+    {
+      "id": "fad4",
+      "cityName": "Gus’-Khrustal’nyy",
+      "country": "Russian Federation (the)",
+      "emoji": "RU",
+      "date": "2025-04-08T20:10:51.613Z",
+      "notes": "",
+      "position": {
+        "lat": "55.75803176823725",
+        "lng": "40.51208496093751"
+      }
     }
   ]
 }
