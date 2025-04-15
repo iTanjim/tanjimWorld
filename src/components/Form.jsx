@@ -29,7 +29,7 @@ function Form() {
   const [date, setDate] = useState(new Date());
   const [notes, setNotes] = useState("");
   const [lat, lng] = useUrlPosition();
-  const { createCity } = useCities();
+  const { createCity, isLoading } = useCities();
 
   const [isLoadingGeocoding, setIsLoadingGeocoding] = useState(false);
   const [geocodingError, setGeocodingError] = useState("");
@@ -76,7 +76,7 @@ function Form() {
     fetchData();
   }, [lat, lng]);
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
 
     if (!cityName || !date) return;
@@ -90,7 +90,8 @@ function Form() {
       position: { lat, lng },
     };
     resetForm();
-    createCity(newCity);
+    await createCity(newCity);
+    navigate("/app/cities");
   }
 
   function resetForm() {
@@ -105,7 +106,10 @@ function Form() {
   if (geocodingError) return <Message message={geocodingError} />;
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit}>
+    <form
+      className={`${styles.form} ${isLoading ? styles.loading : ""}`}
+      onSubmit={handleSubmit}
+    >
       <ReactCountryFlag countryCode={emoji || null} svg style={flagStyle} />
 
       <div className={styles.row}>
