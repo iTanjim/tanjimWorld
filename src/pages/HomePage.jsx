@@ -22,7 +22,7 @@ export default function Homepage() {
         <div>
           <World />
         </div>
-        <Link to="/app" className="cta">
+        <Link to="/login" className="cta">
           Start tarcking now
         </Link>
         <div

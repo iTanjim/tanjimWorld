@@ -21,9 +21,9 @@
 }
 
 .user button {
-  background-color: var(--color-dark--2);
+  background-color: transparent;
+  border: 1px solid rgba(255,255,255,0.6);
   border-radius: 7px;
-  border: none;
   padding: 0.6rem 1.2rem;
   color: inherit;
   font-family: inherit;
@@ -31,4 +31,9 @@
   font-weight: 700;
   text-transform: uppercase;
   cursor: pointer;
+}
+
+.user button:hover{
+  background-color: var(--color-red--1);
+  border-color: transparent;
 }

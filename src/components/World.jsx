@@ -46,28 +46,30 @@ const World = () => {
 
 
   return (
-
-  <div className={styles.globeBg}>
-    <Globe
-      height={500}
-      width={500}
-      ref={globeRef}
-      globeImageUrl="//cdn.jsdelivr.net/npm/three-globe/example/img/earth-dark.jpg"
-      hexPolygonsData={countries.features}
-      backgroundColor="rgba(0,0,0,0)"
-      hexPolygonResolution={3}
-      hexPolygonMargin={.1}
-      hexPolygonUseDots={true}
-      // hexPolygonColor={() => `#${Math.round(Math.random() * Math.pow(2, 24)).toString(16).padStart(6, '0')}`}
-      hexPolygonColor={() => ["#480ca8","#6930c3","#5e60ce", "#5390d9", "#4895ef", "#64dfdf" ][Math.floor(Math.random() * 6)]}
-      hexPolygonLabel={({ properties: d }) => <div>
-        <div><b>{d.ADMIN} ({d.ISO_A2})</b></div>
-        <div>Population: <i>{d.POP_EST}</i></div>
-      </div>}
-    />
-    
-  </div>
-  )
+    <div className={styles.globeBg}>
+      <Globe
+        height={500}
+        width={500}
+        ref={globeRef}
+        globeImageUrl="//cdn.jsdelivr.net/npm/three-globe/example/img/earth-dark.jpg"
+        hexPolygonsData={countries.features}
+        backgroundColor="rgba(0,0,0,0)"
+        hexPolygonResolution={3}
+        hexPolygonMargin={0.1}
+        hexPolygonUseDots={true}
+        // hexPolygonColor={() => `#${Math.round(Math.random() * Math.pow(2, 24)).toString(16).padStart(6, '0')}`}
+        hexPolygonColor={() =>
+          ["#480ca8", "#6930c3", "#5e60ce", "#5390d9", "#4895ef", "#64dfdf"][
+            Math.floor(Math.random() * 6)
+          ]
+        }
+        // hexPolygonLabel={({ properties: d }) => <div>
+        //   <div><b>{d.ADMIN} ({d.ISO_A2})</b></div>
+        //   <div>Population: <i>{d.POP_EST}</i></div>
+        // </div>}
+      />
+    </div>
+  );
 };
 
 export default World;

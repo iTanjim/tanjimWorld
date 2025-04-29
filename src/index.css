@@ -25,6 +25,10 @@
   --color-light--1: #aaa;
   --color-light--2: #ececec;
   --color-light--3: #d6dee0;
+
+  --color--red--0: #660708;
+  --color-red--1: #a4161a;
+  --color-red--2: #ba181b;
 }
 
 * {
@@ -72,14 +76,22 @@ input:focus {
 .cta:link,
 .cta:visited {
   display: inline-block;
-  background-color: var(--color-brand--2);
-  color: var(--color-dark--0);
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
   text-transform: uppercase;
   text-decoration: none;
   font-size: 1.6rem;
   font-weight: 600;
   padding: 1rem 3rem;
   border-radius: 5px;
+  backdrop-filter: blur(17px);
+}
+
+.cta:hover{
+  background-color: var(--color-brand--2);
+  border-color: transparent;
+  color: black;
 }
 
 /*
@@ -90,3 +102,6 @@ input:focus {
     "description": "Import CSS Module as `styles`"
   },
 */
+button {
+  transition: all .3s ease;
+}

@@ -1,3 +1,4 @@
+
 .homepage {
   position: relative;
   height: 100vh;
@@ -78,4 +79,10 @@
 }
 .front{
   z-index: 1;
+}
+
+
+
+.trackNow:hover{
+  color: red;
 }

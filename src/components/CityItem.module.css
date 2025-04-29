@@ -38,7 +38,7 @@
 }
 
 .deleteBtn {
-  height: 2rem;
+  height: 2.3rem;
   aspect-ratio: 1;
   border-radius: 50%;
   border: none;
@@ -51,6 +51,6 @@
 }
 
 .deleteBtn:hover {
-  background-color: var(--color-brand--1);
-  color: var(--color-dark--1);
+  background-color: var(--color-red--1);
+  /* color: var(--color-dark--1); */
 }

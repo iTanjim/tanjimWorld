@@ -56,6 +56,7 @@ function reducer(state, action) {
   }
 }
 
+
 function CitiesProvider({ children }) {
   const [{ cities, isLoading, currentCity }, dispatch] = useReducer(
     reducer,
