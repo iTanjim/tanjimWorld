@@ -1,0 +1,39 @@
+.login {
+  padding: .5rem 5rem;
+  background-color: var(--color-dark--1);
+  min-height: 100vh;
+}
+
+.form {
+  background-color: var(--color-dark--2);
+  border-radius: 7px;
+  padding: 2rem 3rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  box-shadow: 3px 3px 15px rgba(0,0,0,0.6);
+
+  /* Different from other form */
+  width: 48rem;
+  margin: 8rem auto;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.loginBtn {
+  background-color: transparent;
+  border: 1px solid rgba(255,255,255,0.6);
+  padding: 1rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+}
+.loginBtn:hover{
+  background-color: var(--color-brand--2);
+  border-color: transparent;
+  color: black;
+}
