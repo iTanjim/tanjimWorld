@@ -14,8 +14,8 @@ export default function Homepage() {
         <div className={styles.dih}>
           <h1 className={styles.mainHead}>You travel the world.</h1>
           <br />
-          <h1>
-            <span className={styles.logoText}>WorldWise</span> keeps track of
+          <h1 className={styles.secondHead}>
+            <span className={styles.logoText}>VISTORIES</span> keeps track of
             your adventures.
           </h1>
         </div>
@@ -23,32 +23,8 @@ export default function Homepage() {
           <World />
         </div>
         <Link to="/login" className="cta">
-          Start tarcking now
+          Start tracking now
         </Link>
-        <div
-          className={`${styles.textContA} ${
-            inFront ? styles.front : styles.behind
-          }`}
-          onClick={() => setInFront((state) => !state)}
-        >
-          <TextCard>
-            A world map that captures every city you’ve stepped into. Keep your
-            memories alive, relive your adventures, and share your journey with
-            friends as you leave your footprints across the globe
-          </TextCard>
-        </div>
-        <div
-          className={`${styles.textContB} ${
-            !inFront ? styles.front : styles.behind
-          }`}
-          onClick={() => setInFront((state) => !state)}
-        >
-          <TextCard>
-            A world map that captures every city you’ve stepped into. Keep your
-            memories alive, relive your adventures, and share your journey with
-            friends as you leave your footprints across the globe
-          </TextCard>
-        </div>
       </section>
     </main>
   );

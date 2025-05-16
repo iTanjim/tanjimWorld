@@ -13,18 +13,6 @@
       "id": "98443197"
     },
     {
-      "cityName": "Cape Town",
-      "country": "South Africa",
-      "emoji": "ZA",
-      "date": "2028-06-10T16:30:25.000Z",
-      "notes": "Stunning views of Table Mountain.",
-      "position": {
-        "lat": -33.924869,
-        "lng": 18.424055
-      },
-      "id": "87654321"
-    },
-    {
       "cityName": "Vancouver",
       "country": "Canada",
       "emoji": "CA",
@@ -35,6 +23,42 @@
         "lng": -123.120738
       },
       "id": "34567812"
+    },
+    {
+      "id": "216f",
+      "cityName": "Guadarrama",
+      "country": "Spain",
+      "emoji": "ES",
+      "date": "2025-05-15T17:04:28.951Z",
+      "notes": "",
+      "position": {
+        "lat": "40.69521661351717",
+        "lng": "-4.073181152343751"
+      }
+    },
+    {
+      "id": "4f69",
+      "cityName": "Sanchidrian",
+      "country": "Spain",
+      "emoji": "ES",
+      "date": "2025-05-15T17:04:31.701Z",
+      "notes": "",
+      "position": {
+        "lat": "40.914550362677204",
+        "lng": "-4.595031738281251"
+      }
+    },
+    {
+      "id": "f2de",
+      "cityName": "Dr Beyers Naude Local Municipality",
+      "country": "South Africa",
+      "emoji": "ZA",
+      "date": "2025-05-16T15:26:31.199Z",
+      "notes": "",
+      "position": {
+        "lat": "-33.31675830290707",
+        "lng": "24.114990234375004"
+      }
     }
   ]
 }

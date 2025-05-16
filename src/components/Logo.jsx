@@ -11,7 +11,7 @@ function Logo() {
             alt="WorldWise logo"
             className={styles.logoIcon}
           />
-          <h1>WorldWise</h1>
+          <h1>VISTORIES</h1>
         </div>
       </Link>
     </>
