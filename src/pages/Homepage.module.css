@@ -79,7 +79,7 @@ h1 {
   color: red;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 420px) {
   .mainHead {
     font-size: 3rem;
   }

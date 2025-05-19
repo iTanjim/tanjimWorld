@@ -1,10 +1,19 @@
 import { NavLink } from "react-router-dom";
 import styles from "./PageNav.module.css";
 import Logo from "./Logo";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 function PageNav() {
   const underlineRef = useRef(null);
+  const navRef = useRef();
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [clicked, setClicked] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     const activeItem = document.querySelector(".active");
@@ -13,7 +22,8 @@ function PageNav() {
 
     underlineRef.current.style.left = `${activeOffsetLeft}px`;
     underlineRef.current.style.width = `${activeOffsetWidth}px`;
-  }, []);
+    console.log("render");
+  }, [windowWidth]);
 
   const handleHover = (e) => {
     const { offsetLeft, offsetWidth } = e.target;
@@ -24,7 +34,7 @@ function PageNav() {
   return (
     <nav className={styles.nav}>
       <Logo />
-      <ul>
+      <ul ref={navRef}>
         <li onMouseEnter={handleHover}>
           <NavLink to="/">Home</NavLink>
         </li>
@@ -38,6 +48,19 @@ function PageNav() {
         </li>
         <div className={styles.movingLine} ref={underlineRef}></div>
       </ul>
+      <div
+        className={`${styles.burger} ${clicked ? styles.clicked : ""}`}
+        onClick={() => {
+          const currDisplay = navRef.current.style.display;
+          navRef.current.style.display =
+            currDisplay === "flex" ? "none" : "flex";
+          setClicked((prev) => !prev);
+        }}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </nav>
   );
 }
