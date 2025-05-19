@@ -42,7 +42,7 @@ const World = () => {
         ref={globeRef}
         height={globeSize}
         width={globeSize}
-        globeImageUrl="//cdn.jsdelivr.net/npm/three-globe/example/img/earth-night.jpg"
+        globeImageUrl=" //cdn.jsdelivr.net/npm/three-globe/example/img/earth-topology.png"
         hexPolygonsData={countries.features}
         backgroundColor="rgba(0,0,0,0)"
         hexPolygonResolution={3}
