@@ -21,7 +21,7 @@ export default function Product() {
         </div>
         <div className={styles.imgContainer}>
           <img
-            src="img-2.jpg"
+            src="pricing-img.jpg"
             alt="overview of a large city with skyscrapers"
           />
         </div>

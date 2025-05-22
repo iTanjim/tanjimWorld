@@ -22,7 +22,7 @@
 
 .user button {
   background-color: transparent;
-  border: 1px solid rgba(255,255,255,0.6);
+  border: 1px solid rgba(255, 255, 255, 0.6);
   border-radius: 7px;
   padding: 0.6rem 1.2rem;
   color: inherit;
@@ -33,7 +33,18 @@
   cursor: pointer;
 }
 
-.user button:hover{
+.user button:hover {
   background-color: var(--color-red--1);
   border-color: transparent;
+}
+
+@media screen and (max-width: 800px) {
+  .user {
+    top: 0;
+    right: 0;
+    max-width: 300px;
+    padding: 1rem;
+    background-color: var(--color-dark--2);
+    border-radius: 0;
+  }
 }

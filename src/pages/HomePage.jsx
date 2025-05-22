@@ -2,11 +2,8 @@ import { Link } from "react-router-dom";
 import styles from "./Homepage.module.css";
 import PageNav from "../components/PageNav";
 import World from "../components/World";
-import TextCard from "../components/TextCard";
-import { useState } from "react";
 
 export default function Homepage() {
-  const [inFront, setInFront] = useState(false);
   return (
     <main className={styles.homepage}>
       <PageNav />
